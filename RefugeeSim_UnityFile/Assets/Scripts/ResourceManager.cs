@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int FollowerCount;
+    public int GoldCount;
+    public int FoodCount;
+    public int Morale; //0 - negative, 1 - neutral, 2 - positive
 
-    // Update is called once per frame
+    private void Awake()
+    {
+        //read from playerprefs
+        FollowerCount = PlayerPrefs.GetInt("FollowerCount");
+        GoldCount = PlayerPrefs.GetInt("GoldCount");
+        FoodCount = PlayerPrefs.GetInt("FoodCount");
+        Morale = PlayerPrefs.GetInt("Morale");
+    }
     void Update()
     {
-        
+        //write to playerprefs
+        PlayerPrefs.SetInt("FollowerCount", FollowerCount);
+        PlayerPrefs.SetInt("GoldCount", GoldCount);
+        PlayerPrefs.SetInt("FoodCount", FoodCount);
+        PlayerPrefs.SetInt("Morale", Morale);
+
+        //clamp morale
+        if (Morale < 0)
+            Morale = 0;
+        if (Morale > 2)
+            Morale = 2;
     }
 }

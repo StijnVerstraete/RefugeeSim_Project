@@ -6,22 +6,36 @@ using TMPro;
 
 public class EventBehaviour : MonoBehaviour
 {
+    [Header("Text")]
     [SerializeField] TextAsset _text;
     [SerializeField] private string[] _cutText;
 
-    //ui elements
+    [Header("UI Elements")]
     [SerializeField] private GameObject _eventPanel;
     [SerializeField] private TextMeshProUGUI _titleText;
     [SerializeField] private TextMeshProUGUI _descriptionText;
     [SerializeField] private TextMeshProUGUI _option1Text;
     [SerializeField] private TextMeshProUGUI _option2Text;
-
     [SerializeField] private Button _option1;
     [SerializeField] private Button _option2;
     [SerializeField] private Button _exitButton;
 
+    [Header("Option1Gains")]
+    [SerializeField] private int _followersToGain1;
+    [SerializeField] private int _goldToGain1;
+    [SerializeField] private int _foodToGain1;
+    [SerializeField] private int _moraleToGain1;
+
+    [Header("Option2Gains")]
+    [SerializeField] private int _followersToGain2;
+    [SerializeField] private int _goldToGain2;
+    [SerializeField] private int _foodToGain2;
+    [SerializeField] private int _moraleToGain2;
+
+    [Header("Misc")]
     public bool EventActive = true;
     [SerializeField] private PlayerController _player;
+    [SerializeField] private ResourceManager _resourceManager;
 
     void Start()
     {
@@ -55,6 +69,12 @@ public class EventBehaviour : MonoBehaviour
             _option2.gameObject.SetActive(false);
             _exitButton.gameObject.SetActive(true);
             _descriptionText.text = _cutText[4];
+
+            //change resources
+            _resourceManager.FollowerCount += _followersToGain1;
+            _resourceManager.GoldCount += _goldToGain1;
+            _resourceManager.FoodCount += _foodToGain1;
+            _resourceManager.Morale += _moraleToGain1;
         }
     }
     public void Option2Click()
@@ -65,6 +85,12 @@ public class EventBehaviour : MonoBehaviour
             _option2.gameObject.SetActive(false);
             _exitButton.gameObject.SetActive(true);
             _descriptionText.text = _cutText[5];
+
+            //change resources
+            _resourceManager.FollowerCount += _followersToGain2;
+            _resourceManager.GoldCount += _goldToGain2;
+            _resourceManager.FoodCount += _foodToGain2;
+            _resourceManager.Morale += _moraleToGain2;
         }
     }
     public void ExitClick()
