@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
     private GameObject[] _eventBehaviours;
     private EventBehaviour _activeEvent;
+
     void Start()
     {
         _eventBehaviours = GameObject.FindGameObjectsWithTag("event");

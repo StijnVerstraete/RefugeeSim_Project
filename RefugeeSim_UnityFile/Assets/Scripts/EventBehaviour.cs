@@ -21,6 +21,7 @@ public class EventBehaviour : MonoBehaviour
     [SerializeField] private Button _exitButton;
 
     public bool EventActive = true;
+    [SerializeField] private PlayerController _player;
 
     void Start()
     {
@@ -33,23 +34,18 @@ public class EventBehaviour : MonoBehaviour
         _option2Text.text = _cutText[3];
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log(_cutText);
-       
-
-    }
     private void OnTriggerEnter(Collider other)
     {
-
+        if (other.tag == "Player")
+        {
             _eventPanel.SetActive(true);
-            _option1.enabled = true;
-            _option2.enabled = true;
+            _option1.gameObject.SetActive(true);
+            _option2.gameObject.SetActive(true);
 
             EventActive = true;
 
+            _player.EventActive = true;
+        }
     }
     public void Option1Click()
     {
@@ -78,6 +74,7 @@ public class EventBehaviour : MonoBehaviour
             _eventPanel.SetActive(false);
             _exitButton.gameObject.SetActive(false);
             EventActive = false;
+            _player.EventActive = false;
         }
     }
 }
