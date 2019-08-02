@@ -20,7 +20,7 @@ public class EventBehaviour : MonoBehaviour
     [SerializeField] private Button _option2;
     [SerializeField] private Button _exitButton;
 
-    [SerializeField] private bool _eventActive = true;
+    public bool EventActive = true;
 
     void Start()
     {
@@ -48,12 +48,12 @@ public class EventBehaviour : MonoBehaviour
             _option1.enabled = true;
             _option2.enabled = true;
 
-            _eventActive = true;
+            EventActive = true;
 
     }
     public void Option1Click()
     {
-        if (_eventActive)
+        if (EventActive)
         {
             _option1.gameObject.SetActive(false);
             _option2.gameObject.SetActive(false);
@@ -63,7 +63,7 @@ public class EventBehaviour : MonoBehaviour
     }
     public void Option2Click()
     {
-        if (_eventActive)
+        if (EventActive)
         {
             _option1.gameObject.SetActive(false);
             _option2.gameObject.SetActive(false);
@@ -73,11 +73,11 @@ public class EventBehaviour : MonoBehaviour
     }
     public void ExitClick()
     {
-        if (_eventActive)
+        if (EventActive)
         {
             _eventPanel.SetActive(false);
             _exitButton.gameObject.SetActive(false);
-            _eventActive = false;
+            EventActive = false;
         }
     }
 }

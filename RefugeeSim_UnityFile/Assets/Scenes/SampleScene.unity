@@ -208,7 +208,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 902333535}
+      - m_Target: {fileID: 1348334996}
         m_MethodName: ExitClick
         m_Mode: 1
         m_Arguments:
@@ -1222,7 +1222,7 @@ MonoBehaviour:
   _option1: {fileID: 1760116944}
   _option2: {fileID: 1893458382}
   _exitButton: {fileID: 61828941}
-  _eventActive: 0
+  EventActive: 0
 --- !u!1 &952129488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,6 +1831,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1348334995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1348334997}
+  - component: {fileID: 1348334996}
+  m_Layer: 0
+  m_Name: ButtonManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1348334996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348334995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad8ab22fe161ac4786711e8524d7031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1348334997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348334995}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1430.6674, y: 458.67523, z: -156.12686}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1419932146 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: bd598c2aa03b4434ea50c76e276a8ba3,
@@ -2289,7 +2332,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 902333535}
+      - m_Target: {fileID: 1348334996}
         m_MethodName: Option1Click
         m_Mode: 1
         m_Arguments:
@@ -2428,7 +2471,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 902333535}
+      - m_Target: {fileID: 1348334996}
         m_MethodName: Option2Click
         m_Mode: 1
         m_Arguments:
