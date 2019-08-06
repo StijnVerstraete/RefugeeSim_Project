@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!EventActive)
         {
-            _charCTRL.Move(Vector3.forward * _speed);
+            _charCTRL.Move(Vector3.forward * _speed * Time.fixedDeltaTime);
         }
     }
 }
