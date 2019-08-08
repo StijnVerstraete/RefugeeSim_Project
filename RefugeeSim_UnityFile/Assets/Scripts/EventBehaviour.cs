@@ -47,6 +47,8 @@ public class EventBehaviour : MonoBehaviour
         _option1Text.text = _cutText[2];
         _option2Text.text = _cutText[3];
 
+        //
+
     }
     private void OnTriggerEnter(Collider other)
     {

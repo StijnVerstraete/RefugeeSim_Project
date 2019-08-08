@@ -7,6 +7,7 @@ public class ButtonManager : MonoBehaviour
 {
     private GameObject[] _eventBehaviours;
     private EventBehaviour _activeEvent;
+    private ResourceManager _resourceManager;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class ButtonManager : MonoBehaviour
     }
     public void ExitClick()
     {
+        _resourceManager.EndDay();
         _activeEvent.ExitClick();
     }
 }
