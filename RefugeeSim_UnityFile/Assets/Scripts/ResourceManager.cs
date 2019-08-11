@@ -13,11 +13,13 @@ public class ResourceManager : MonoBehaviour
     public int Morale; //0 - negative, 1 - neutral, 2 - positive
 
     //ui elements
-    [SerializeField] private TextMeshProUGUI _followersText, _goldText, _foodText;
+    [SerializeField] private TextMeshProUGUI _followersText, _goldText, _foodText, _quitText;
     [SerializeField] private Image _morale;
     [SerializeField] private Sprite _moraleUp, _moraleDown, _moraleNeutral;
 
     [SerializeField] private GameObject _gameOverPanel;
+
+    private int _followersLost = 0, _moraleLost = 0, _foodLost = 0;
 
     private void Awake()
     {
@@ -43,10 +45,12 @@ public class ResourceManager : MonoBehaviour
         UpdateUI();
 
         //restart
-        if (FollowerCount == 0)
+        if (FollowerCount <= 0)
             _gameOverPanel.SetActive(true);
         if (Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene("MainScene");
+
+        CalculateEndDayEffects();
     }
     private void UpdateUI()
     {
@@ -60,30 +64,53 @@ public class ResourceManager : MonoBehaviour
             _morale.sprite = _moraleUp;
         else if (Morale == 1)
             _morale.sprite = _moraleNeutral;
-
     }
-    public void EndDay()
-    {
+    private void CalculateEndDayEffects()
+    {    
         //use food
-        FoodCount = FoodCount - FollowerCount;
+        _foodLost = FollowerCount;
 
+        Debug.Log(FoodCount);
+        Debug.Log(_foodLost);
+        Debug.Log(FollowerCount);
         //starvation effect
-        if (FoodCount <= 0 )
+        if (FoodCount <= 0)
         {
             FoodCount = 0;
-            FollowerCount -= FollowerCount / 3;
-            Morale -= 1;
+            _followersLost = FollowerCount / 3;
+            _moraleLost = 0;
         }
         if (FollowerCount <= 1 && FoodCount <= 0)
         {
             FollowerCount = 0;
         }
-
+        EndDayEffects("EndDay", _followersLost, _foodLost, _moraleLost);
+    }
+    public void EndDay()
+    {
+        //loose values
+        FollowerCount -= _followersLost;
+        FoodCount -= _foodLost;
+        Morale -= _moraleLost;
 
         //clamp values
         if (Morale > 1)
             Morale = 1;
         if (Morale < -1)
-            Morale = -1;     
+            Morale = -1;
+    }
+    private void EndDayEffects(string text, int followersLost, int foodLost, int moraleLost)
+    {
+        string followersstring = "";
+        string foodstring = "";
+        string moralestring = "";
+        if (followersLost != 0)
+             followersstring = "-" + followersLost + " <sprite=0>";
+        if (foodLost != 0)
+            foodstring = "-" + foodLost+ " <sprite=1>";
+        if (moraleLost != 0)
+            moralestring = "<sprite=4>";
+
+        _quitText.text = text + " (" + followersstring + foodstring + moralestring + ")";
     }
 }
