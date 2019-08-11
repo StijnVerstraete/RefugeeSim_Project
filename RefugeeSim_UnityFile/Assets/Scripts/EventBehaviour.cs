@@ -40,15 +40,6 @@ public class EventBehaviour : MonoBehaviour
     void Start()
     {
         _cutText = _text.text.Split('\n');
-
-        //move to ontriggerenter once player is in
-        _titleText.text = _cutText[0];
-        _descriptionText.text = _cutText[1];
-        _option1Text.text = _cutText[2];
-        _option2Text.text = _cutText[3];
-
-        //
-
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -57,6 +48,11 @@ public class EventBehaviour : MonoBehaviour
             _eventPanel.SetActive(true);
             _option1.gameObject.SetActive(true);
             _option2.gameObject.SetActive(true);
+
+            _titleText.text = _cutText[0];
+            _descriptionText.text = _cutText[1];
+            _option1Text.text = _cutText[2];
+            _option2Text.text = _cutText[3];
 
             EventActive = true;
 

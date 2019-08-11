@@ -54,11 +54,11 @@ public class ResourceManager : MonoBehaviour
         _goldText.text = GoldCount.ToString();
         _foodText.text = FoodCount.ToString();
 
-        if (Morale < 0)
+        if (Morale == 0)
             _morale.sprite = _moraleDown;
-        else if (Morale > 0)
+        else if (Morale == 2)
             _morale.sprite = _moraleUp;
-        else if (Morale == 0)
+        else if (Morale == 1)
             _morale.sprite = _moraleNeutral;
 
     }
