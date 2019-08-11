@@ -7,7 +7,7 @@ public class ButtonManager : MonoBehaviour
 {
     private GameObject[] _eventBehaviours;
     private EventBehaviour _activeEvent;
-    private ResourceManager _resourceManager;
+    [SerializeField] private ResourceManager _resourceManager;
 
     void Start()
     {
