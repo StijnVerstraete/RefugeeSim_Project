@@ -51,6 +51,9 @@ public class EventBehaviour : MonoBehaviour
         if (other.tag == "Player")
         {
 
+
+            AdjustForMorale();
+
             CreateEffectStrings();
 
             _eventPanel.SetActive(true);
@@ -66,8 +69,6 @@ public class EventBehaviour : MonoBehaviour
             EventActive = true;
 
             _player.EventActive = true;
-
-            AdjustForMorale();
 
             //check gold cost
             if (_goldToGain1 + _resourceManager.GoldCount < 0)
