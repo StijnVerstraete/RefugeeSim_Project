@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2549391496449526796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2549391496449526799}
+  - component: {fileID: 2549391496449526798}
+  - component: {fileID: 7045590623573871787}
+  m_Layer: 0
+  m_Name: Event1-4
+  m_TagString: event
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2549391496449526799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549391496449526796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 39.13, y: 0, z: 494.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2549391496449526798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549391496449526796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b29bb08ad20129648a15e247a2bc05bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 4900000, guid: 42f4b01da1735334a9e284ca7ed887e6, type: 3}
+  _cutText: []
+  _eventPanel: {fileID: 0}
+  _titleText: {fileID: 0}
+  _descriptionText: {fileID: 0}
+  _option1Text: {fileID: 0}
+  _option2Text: {fileID: 0}
+  _option1: {fileID: 0}
+  _option2: {fileID: 0}
+  _exitButton: {fileID: 0}
+  _followersToGain1: 0
+  _goldToGain1: 0
+  _foodToGain1: 15
+  _moraleToGain1: -1
+  _followersToGain2: 0
+  _goldToGain2: 0
+  _foodToGain2: 0
+  _moraleToGain2: 0
+  EventActive: 0
+  _player: {fileID: 0}
+  _resourceManager: {fileID: 0}
+--- !u!65 &7045590623573871787
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549391496449526796}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 5, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
