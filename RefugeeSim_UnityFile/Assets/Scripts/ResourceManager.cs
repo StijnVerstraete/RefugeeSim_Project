@@ -70,9 +70,6 @@ public class ResourceManager : MonoBehaviour
         //use food
         _foodLost = FollowerCount;
 
-        Debug.Log(FoodCount);
-        Debug.Log(_foodLost);
-        Debug.Log(FollowerCount);
         //starvation effect
         if (FoodCount <= 0)
         {
